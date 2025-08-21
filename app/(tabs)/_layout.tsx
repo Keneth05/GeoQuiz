@@ -1,45 +1,50 @@
+import LogoutButton from '@/components/Logout';
+import FontAwesome from '@expo/vector-icons/FontAwesome6';
 import { Tabs } from 'expo-router';
 import React from 'react';
-import { Platform } from 'react-native';
+import { Image } from 'react-native';
 
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+const TabLayout = () => {
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
 
-  return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
-          },
-          default: {},
-        }),
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
-    </Tabs>
-  );
+    return (
+        <Tabs screenOptions={{
+            headerShown:true,
+            headerTintColor: 'white',
+            tabBarActiveTintColor:'white',
+            tabBarInactiveTintColor:'#6d6e6d',
+            headerTitleAlign:'center',
+            tabBarLabelStyle: {
+                fontSize: 14,        
+                fontWeight: 'bold', 
+            },
+            headerTitleStyle: {
+                fontSize: 24,          
+                fontWeight: 'bold',   
+                color: 'white',     
+            },
+            headerStyle: {
+                backgroundColor: '#15222F', 
+            },
+            tabBarStyle: {
+                backgroundColor: '#15222F',             
+            },
+            headerRight: () => (<Image 
+                                source={require('@/assets/images/Logo.png')}
+                                style={{ width: 70, height: 95, marginRight: 15, marginBottom:5 }}
+                                resizeMode='contain'
+                                />),
+            headerLeft: () => (
+                <LogoutButton/>
+            )
+        }}>
+
+            <Tabs.Screen name='CountryList/index' options={{headerTitle: 'GeoQuiz', tabBarLabel: 'Países', tabBarIcon:({color}) => <FontAwesome size={24} name='flag-checkered' color={color}/>}}/>
+            
+            <Tabs.Screen name='GameMode' options={{title:'Juegos', headerShown:false, tabBarIcon:({color}) => <FontAwesome size={24} name='gamepad' color={color}/>}}/>
+        
+        </Tabs> 
+    )
 }
+
+export default TabLayout
