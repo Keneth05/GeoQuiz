@@ -1,6 +1,8 @@
-# Welcome to your Expo app 👋
+# Welcome to GeoTrivia Game
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is a Trivia game where you can see a completely list of world wide countrys with aditional information like the name, the region and the capital.
+The app count with a authentication page where you can Login.
+You also can play two kind of games, the first one you´re gonna have a country flag and four different options with countries name where you have to guess which option is correct, and the second type of game, you need to guess the capital name of the country, you´ll have a flag too
 
 ## Get started
 
