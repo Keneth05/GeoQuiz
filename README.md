@@ -4,19 +4,10 @@ This is a Trivia game where you can see a completely list of world wide countrys
 The app count with a authentication page where you can Login.
 You also can play two kind of games, the first one you´re gonna have a country flag and four different options with countries name where you have to guess which option is correct, and the second type of game, you need to guess the capital name of the country, you´ll have a flag too
 
-## Get started
+## Environment Configuration
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
+The app is available on Android sistems as an APK and if you have iOS you´ll need to install Expo Go app.
+To start the APP is necessary to install NPM modules with npm install command, then use npm start on command line, after that you must scan the QR Code to start using the app, other option is uae the Andriod Studio Emulator 
 
 In the output, you'll find options to open the app in a
 
